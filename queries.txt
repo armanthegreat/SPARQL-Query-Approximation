@@ -1,0 +1,24 @@
+
+
+# using the wroong predicate
+SELECT ?place
+WHERE {
+   dbr:Albert_Einstein dbo:birthplace ?place .
+}
+
+
+# 
+# 
+# 
+# finiding the subseqent work of the hobbit ()
+SELECT  distinct ?w WHERE{
+	dbr:The_Hobbit dbo:subsequentWork ?x1.
+}
+
+
+# finding the albums of rolling stones published by london records (with three triples)
+SELECT  ?album WHERE{
+   ?album  albumby dbr:The_Rolling_Stones.
+        ?album  rdf:type dbo:Album.
+  ?album dbo:recordLabel dbr:London_Records
+}
