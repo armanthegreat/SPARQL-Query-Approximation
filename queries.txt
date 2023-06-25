@@ -11,7 +11,7 @@ WHERE {
 # 
 # 
 # finiding the subseqent work of the hobbit ()
-SELECT  distinct ?w WHERE{
+ SELECT ?x1 WHERE{
 	dbr:The_Hobbit dbo:subsequentWork ?x1.
 }
 
