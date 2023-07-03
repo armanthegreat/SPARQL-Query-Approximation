@@ -27,9 +27,8 @@ PREFIX xsd:<http://www.w3.org/2001/XMLSchema#> SELECT DISTINCT ?uri WHERE { ?uri
 
 import re
 
-import json
 import socket
-import requests
+
 from SPARQLWrapper import SPARQLWrapper, JSON
 
 
@@ -84,7 +83,8 @@ class SPARQL(object):
             '<http://www.w3.org/2001/XMLSchema#>': 'xsd',
             '<http://www.w3.org/2002/07/owl#>': 'owl',
             '<http://xmlns.com/foaf/0.1/>': 'foaf',
-            '<http://www.w3.org/2004/02/skos/core#>': 'skos'
+            '<http://www.w3.org/2004/02/skos/core#>': 'skos',
+            'http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#' : 'dul'
         })
         self.normalize()
         self.set_sparql()  # link_sparql
@@ -292,6 +292,10 @@ class SPARQL(object):
                     string=string.replace(ill_form,standard_form)         
                     '''
         self.abbr_sparql = string
+
+
+
+        
 
     def set_link_sparql(self):
         self.link_sparql = self.sparql
